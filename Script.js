@@ -1,61 +1,61 @@
 //1.Class - Movie
-class movie{
-  constructor(title,studio,rating){
+class Movie{
+  constructor(title,studio,rating="PG"){
   this.title=title
   this.studio=studio
   this.rating=rating
   }
-  getPG(){
-      console.log(`Title: ${this.title}`);
-      console.log(`Studio: ${this.studio}`);
-      console.log(`Rating: ${this.rating}`);
-  }
-  setPG(){
-    return this.rating
-    }
+  static getPG(array){
+       return array.filter(Movie => Movie.rating==="PG")
+ }
   
   }
-var a = new movie("Casino Royale", "Eon production", "PG13");
-a.getPG();
-console.log(a.setPG());
+var array = [
+    new Movie("Casino Royale", "Eon production", "PG13"),
+    new Movie("Jurassic park", "Universal Pictures", "PG"),
+    new Movie("Harry potter","Warner Bros","PG")
+    ];
+    
+var pgMovies = Movie.getPG(array);
+console.log(pgMovies);
 
 
-//2.Class - circle
+//2.Class - circle      
 //2.a
-class circle{
+class Circle{
   constructor(){
 
   }
   }
-var a = new circle();
+var a = new Circle();
 console.log(a);
 
 //2.b
 var double = Number.parseFloat(1.0).toFixed(1);
-class circle{
+class Circle{
   constructor(radius){
     this.radius=radius
   }
   }
-var a = new circle(double);
+var a = new Circle(double);
 console.log(a);
 
 //2.c
 var double = Number.parseFloat(1.0).toFixed(1);
-class circle{
+class Circle{
   constructor(radius, color){
     this.radius=radius
     this.color=color
   }
   }
-var a = new circle(double,"red");
+var a = new Circle(double,"red");
 console.log(a);
 
 
 //2d,2e,2f,2g,2h,2i,2j
 var double = Number.parseFloat(1.0).toFixed(1);
 var double1 = Number.parseFloat(2.5).toFixed(1);
-class circle{
+class Circle{
   constructor(radius, color){
     this.radius=radius
     this.color=color
@@ -74,8 +74,8 @@ class circle{
     this.color=color
     return color
     }
-  tostring(){
-    var str =(`"circle[radius: ${this.radius},colour: ${this.color}]"`);
+  toString(){
+    var str =(`"circle[radius: ${this.radius.toString()},colour: ${this.color}]"`);
     return str;
     }
   getArea(){
@@ -85,14 +85,15 @@ class circle{
     return 2*Math.PI*double;
     }
   }
-var a = new circle(double,"red");
+var a = new Circle(double,"red");
 console.log(a.getRadius());
 console.log(a.setRadius(double1));
 console.log(a.getColor());
 console.log(a.setColor("blue"));
-console.log(a.tostring());
+console.log(a.toString());
 console.log(a.getArea());
 console.log(a.getCircumference());
+
 
 
 
@@ -124,7 +125,7 @@ class Person {
 
 
 //4. write a class to calculate the Uber price.
-  class price{
+  class Price{
     constructor(perKmRate,km){
     this.perKmRate=perKmRate  
     this.km=km
@@ -135,5 +136,5 @@ class Person {
     }
     
     }
-  var value = new price(15,20);
+  var value = new Price(15,20);
   console.log(value.uperPrice());
